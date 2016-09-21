@@ -1,0 +1,22 @@
+{
+  "name": "azbn-tple",
+  "version": "1.0.0",
+  "description": "0.1.0",
+  "main": "azbn-tple.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevAzbn/azbn-tple-prototype.git"
+  },
+  "author": "= <alexander.zybin@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevAzbn/azbn-tple-prototype/issues"
+  },
+  "homepage": "https://github.com/DevAzbn/azbn-tple-prototype#readme"
+}
