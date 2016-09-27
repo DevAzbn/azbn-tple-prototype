@@ -17,8 +17,8 @@ var data = {
 	html : 'текст!1!!!!!!!!!!11!11',
 	item_id : 16516846,
 	test : {
-		left : 'left',
-		right : 'right',
+		left : '1',
+		right : '2',
 	}
 };
 //console.log(tple.cache['tpl.html']);
@@ -37,4 +37,4 @@ setTimeout(function(){
 		}
 		
 	});
-},5000);
+},500);

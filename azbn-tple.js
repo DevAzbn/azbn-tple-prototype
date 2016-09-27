@@ -28,10 +28,14 @@ module.exports = function(_param) {
 				_prefix = [prefix,_key].join('.');
 			}
 			
-			if(typeof obj[_key] != 'Object') {
+			if(typeof obj[_key] != 'object') {
 				_obj[_prefix] = obj[_key];
 			} else {
-				ctrl.restructObj(obj[_key], _prefix);
+				var __obj = ctrl.restructObj(obj[_key], _prefix);
+				
+				for(var __key in __obj) {
+					_obj[__key] = __obj[__key];
+				}
 				//util.inherits(_obj, ctrl.restructObj(_prefix, obj[_key]));
 			}
 			
@@ -72,9 +76,9 @@ module.exports = function(_param) {
 		var err = null;
 		var res_str = '';
 		
-		var _data = ctrl.restructObj(data, null);
+		var _data = ctrl.restructObj(data);
 		
-		console.log(_data);process.exit(0);
+		//console.log(_data);process.exit(0);
 		
 		var _res = builder.getFromCode(str, _data);
 		res_str = _res.html;
