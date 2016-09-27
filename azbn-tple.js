@@ -76,11 +76,11 @@ module.exports = function(_param) {
 		var err = null;
 		var res_str = '';
 		
-		var _data = ctrl.restructObj(data);
+		data = ctrl.restructObj(data);
 		
 		//console.log(_data);process.exit(0);
 		
-		var _res = builder.getFromCode(str, _data);
+		var _res = builder.getFromCode(str, data);
 		res_str = _res.html;
 		
 		cb(err, res_str);
