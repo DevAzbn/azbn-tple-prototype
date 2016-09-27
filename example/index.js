@@ -16,6 +16,10 @@ var data = {
 	recipient : 'devazbn@yandex.ru',
 	html : 'текст!1!!!!!!!!!!11!11',
 	item_id : 16516846,
+	test : {
+		left : 'left',
+		right : 'right',
+	}
 };
 //console.log(tple.cache['tpl.html']);
 
