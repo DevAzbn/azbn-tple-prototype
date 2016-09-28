@@ -2,6 +2,7 @@
 
 */
 var fs = require('fs');
+var __read_bytes = 1024 * 1024 * 100;
 
 var builder = function(param) {
 	
@@ -45,7 +46,7 @@ var builder = function(param) {
 		if(fs.existsSync(ctrl.getFileName(file))) {
 			
 			var file_handle = fs.openSync(ctrl.getFileName(file), 'r', 0644);
-			code.html = fs.readSync(file_handle, 1048576000, null, 'utf8')[0];
+			code.html = fs.readSync(file_handle, __read_bytes, null, 'utf8')[0];
 			fs.close(file_handle);
 			
 			code.html = code.html.replace(ctrl.regexp.base, ctrl.basereplacer);

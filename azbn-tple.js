@@ -9,7 +9,7 @@ module.exports = function(_param) {
 	var ctrl = this;
 	
 	ctrl.name = 'AzbnTplEngine';
-	ctrl.version = 2.2;
+	ctrl.version = 2.3;
 	
 	var log_name = ctrl.name;
 	
@@ -85,6 +85,22 @@ module.exports = function(_param) {
 		res_str = _res.html;
 		
 		cb(err, res_str);
+		
+	};
+	
+	ctrl.parseStrSync = function(str, data) {
+		
+		var err = null;
+		var res_str = '';
+		
+		var _data = ctrl.restructObj(data);
+		
+		//console.log(_data);process.exit(0);
+		
+		var _res = builder.getFromCode(str, _data);
+		res_str = _res.html;
+		
+		return res_str;
 		
 	};
 	
