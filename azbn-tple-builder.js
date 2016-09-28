@@ -20,16 +20,7 @@ var builder = function(param) {
 	ctrl.getFromCode = function(_code, prm) {
 		var code = {
 			html : '',
-			less : [],
-			js : [],
 		};
-		
-		/*
-		prm.map(function(v, k, arr){
-			_code = _code.replace(new RegExp("{{" + k + "}}", "ig"), v);
-			return el;
-		});
-		*/
 		
 		code.html = _code.replace(ctrl.regexp.base, ctrl.basereplacer);
 		
@@ -47,8 +38,6 @@ var builder = function(param) {
 	ctrl.getSnippetCode = function(file, prm_str) {
 		var code = {
 			html : '',
-			less : [],
-			js : [],
 		};
 		
 		prm_str = prm_str || '';

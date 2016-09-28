@@ -9,6 +9,7 @@ module.exports = function(_param) {
 	var ctrl = this;
 	
 	ctrl.name = 'AzbnTplEngine';
+	ctrl.version = 2.1;
 	
 	var log_name = ctrl.name;
 	
