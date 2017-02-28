@@ -2,7 +2,6 @@
 
 */
 var fs = require('fs');
-var __read_bytes = 1024 * 1024 * 100;
 
 var builder = function(param) {
 	
@@ -11,7 +10,7 @@ var builder = function(param) {
 	ctrl.regexp = {
 		base : new RegExp(/\[\[azbntple+\s+tpl="([^"=]+)"+([^\]]+)+\]\]/ig),
 		by_param : new RegExp(/([^"=\s]+="[^"]+")/ig),
-		by_value : new RegExp(/([^"]+)([^"=]+)/ig),//new RegExp(/([^"=\s]+)([^"=]+)/ig),
+		by_value : new RegExp(/([^"]+)([^"=]+)/ig),
 	};
 	
 	ctrl.getFileName = function(file) {
@@ -45,9 +44,9 @@ var builder = function(param) {
 		
 		if(fs.existsSync(ctrl.getFileName(file))) {
 			
-			var file_handle = fs.openSync(ctrl.getFileName(file), 'r', 0644);
-			code.html = fs.readSync(file_handle, __read_bytes, null, 'utf8')[0];
-			fs.close(file_handle);
+			code.html = fs.readFileSync(ctrl.getFileName(file), {
+				encoding : 'utf8',
+			});
 			
 			code.html = code.html.replace(ctrl.regexp.base, ctrl.basereplacer);
 			
